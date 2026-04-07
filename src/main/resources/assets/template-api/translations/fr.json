@@ -1,0 +1,24 @@
+{
+  "name": "Français",
+  "prefix": "&7[&6Template Game&7]",
+
+  "player_list": {
+    "header": "&b&l  Template Game  &r",
+    "footer": " \n&6 Plugin: &3NeutronStars &r\n  \n&b&o {{ version }} &r"
+  },
+
+  "event": {
+    "player": {
+      "join": " \n{{ prefix }} &f{{ player }} &6&lvient combattre pour défendre ses couleurs.\n ",
+      "quit": "{{ prefix }} &f{{ player }} &6&la déserté le combat."
+    },
+    "team": {
+      "join": " \n{{ prefix }} &f{{ player }} &6&la rejoint votre équipe.\n ",
+      "leave": " \n{{ prefix }} &f{{ player }} &c&la quitté votre équipe.\n ",
+      "player": {
+        "join": " \n{{ prefix }} &6&lVous avez rejoint l'équipe &r{{ team }}&6&l.\n ",
+        "leave": " \n{{ prefix }} &c&lVous avez quitté l'équipe &r{{ team }}&c&l.\n "
+      }
+    }
+  }
+}

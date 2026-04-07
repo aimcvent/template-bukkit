@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group = 'fr.aimcvent'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://jitpack.io/' }
+}
+
+dependencies {
+    compileOnly 'com.github.aimcvent:bukkit-api:1.1.0'
+    compileOnly 'com.google.code.gson:gson:2.10.1'
+    compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+}
+
+def targetJavaVersion = 8
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release = targetJavaVersion
+    }
+}
+
+jar {
+    configurations.implementation.setCanBeResolved(true)
+    configurations.implementation.resolutionStrategy {
+        duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    }
+    exclude('META-INF/LICENSE', 'META-INF/NOTICE')
+    doFirst {
+        from { (configurations.implementation.findAll { !it.path.endsWith(".pom") })
+                .collect { it.isDirectory() ? it : zipTree(it) } }
+    }
+}

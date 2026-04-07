@@ -1,0 +1,54 @@
+{
+  "spawn": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "yaw": 0
+  },
+  "teams": [
+    {
+      "identifier": "team.red",
+      "name": "Rouge",
+      "prefix": "&c",
+      "icon": {
+        "material": "WOOL",
+        "data": 14
+      },
+      "spawn": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "yaw": 0
+      }
+    },
+    {
+      "identifier": "team.blue",
+      "name": "Bleu",
+      "prefix": "&9",
+      "icon": {
+        "material": "WOOL",
+        "data": 11
+      },
+      "spawn": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "yaw": 0
+      }
+    }
+  ],
+  "spectator": {
+    "name": "Spectateur",
+    "prefix": "&6[SPEC] &7",
+    "icon": {
+      "material": "WOOL",
+      "data": 0
+    },
+    "spawn": {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "yaw": 0
+    }
+  }
+}
