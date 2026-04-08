@@ -11,8 +11,8 @@
       "name": "Rouge",
       "prefix": "&c",
       "icon": {
-        "material": "WOOL",
-        "data": 14
+        "type": "WOOL",
+        "durability": 14
       },
       "spawn": {
         "x": 0,
@@ -26,8 +26,8 @@
       "name": "Bleu",
       "prefix": "&9",
       "icon": {
-        "material": "WOOL",
-        "data": 11
+        "type": "WOOL",
+        "durability": 11
       },
       "spawn": {
         "x": 0,
@@ -41,8 +41,8 @@
     "name": "Spectateur",
     "prefix": "&6[SPEC] &7",
     "icon": {
-      "material": "WOOL",
-      "data": 0
+      "type": "WOOL",
+      "durability": 0
     },
     "spawn": {
       "x": 0,
