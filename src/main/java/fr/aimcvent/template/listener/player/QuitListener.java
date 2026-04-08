@@ -28,5 +28,7 @@ public class QuitListener implements Listener {
             .of(this.templateService, "event.player.quit")
             .add("player", player.displayName())
             .broadcast(this.templateService.players().translations());
+
+        this.bukkitService.hotbars().clear(event.getPlayer());
     }
 }

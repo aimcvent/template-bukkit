@@ -1,10 +1,10 @@
 package fr.aimcvent.template.player;
 
+import fr.aimcvent.bukkit.api.BukkitService;
 import fr.aimcvent.kernel.api.Kernel;
 import fr.aimcvent.kernel.api.translation.Translation;
 import fr.aimcvent.player.api.PlayerService;
 import fr.aimcvent.template.TemplateService;
-import fr.aimcvent.template.event.player.PlayerLoadEvent;
 import fr.aimcvent.template.event.player.PlayerUnloadEvent;
 import fr.aimcvent.template.utils.State;
 import org.bukkit.GameMode;
@@ -37,16 +37,17 @@ public class Players {
     }
 
     public Player of(HumanEntity bukkitPlayer) {
-        return this.playerMap.computeIfAbsent(bukkitPlayer.getUniqueId(), (id) -> {
-            final Player player = new Player(
+        return this.playerMap.computeIfAbsent(
+            bukkitPlayer.getUniqueId(),
+            new PlayerCreatorFunction(
                 this.kernel.services().of(PlayerService.class),
-                bukkitPlayer.getUniqueId(),
-                bukkitPlayer.getName(),
-                this.teamIndex.incrementAndGet()
-            );
-            this.kernel.events().call(new PlayerLoadEvent(player));
-            return player;
-        });
+                this.kernel.services().of(BukkitService.class),
+                this.templateService,
+                this.kernel,
+                (org.bukkit.entity.Player) bukkitPlayer,
+                this.teamIndex
+            )
+        );
     }
 
     public void remove(Player player) {

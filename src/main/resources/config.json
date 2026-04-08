@@ -50,5 +50,11 @@
       "z": 0,
       "yaw": 0
     }
-  }
+  },
+  "sidebar.lobby": [
+    "whitespace",
+    "players",
+    "whitespace",
+    "footer"
+  ]
 }

@@ -20,5 +20,24 @@
         "leave": " \n{{ prefix }} &c&lVous avez quitté l'équipe &r{{ team }}&c&l.\n "
       }
     }
+  },
+
+  "sidebar": {
+    "title": "&6&lTemplate Game",
+    "players": "&6Joueur{{ s }} &f: {{ players }}",
+    "footer": "play.cripieclub.fr"
+  },
+
+  "inventory": {
+    "team": {
+      "title": "&3&lChoix des équipes",
+      "lore": "&f &3&o{{ player }}",
+      "join": {
+        "error": "{{ prefix }} &c&lImpossible de rejoindre l'équipe &r{{ team }}&c&l."
+      },
+      "leave": {
+        "error": "{{ prefix }} &c&lImpossible de quitter l'équipe &r{{ team }}&c&l."
+      }
+    }
   }
 }

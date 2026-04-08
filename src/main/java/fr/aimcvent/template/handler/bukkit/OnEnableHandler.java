@@ -19,7 +19,8 @@ public class OnEnableHandler implements KernelListener {
         this.injector.scanner()
             .find(
                 "fr.aimcvent.template.command",
-                "fr.aimcvent.template.listener"
+                "fr.aimcvent.template.listener",
+                "fr.aimcvent.template.sidebar"
             ).inject();
     }
 }
